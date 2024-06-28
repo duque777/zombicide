@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zombicide Game Helper</title>
+    <title>Zombicide Game Helper - By Duque</title>
     <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
     <style>
         body {
@@ -32,7 +32,7 @@
         .active {
             background-color: #cc0000;
         }
-        .card, .weapon {
+        .card {
             background-color: #222;
             border: 2px solid #cc0000;
             padding: 20px;
@@ -40,31 +40,54 @@
             border-radius: 10px;
             box-shadow: 0 0 10px #000;
             font-size: 1.2em;
+            background-size: cover;
+            color: #fff;
         }
-        .weapon button {
-            margin-top: 10px;
+        .card-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .card-blocks {
+            display: flex;
+            justify-content: space-around;
+        }
+        .card-block {
+            width: 20%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #cc0000;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .card-block.red {
+            background-color: rgba(255, 0, 0, 0.7);
+        }
+        .card-block.orange {
+            background-color: rgba(255, 165, 0, 0.7);
+        }
+        .card-block.yellow {
+            background-color: rgba(255, 255, 0, 0.7);
+        }
+        .card-block.blue {
+            background-color: rgba(0, 0, 255, 0.7);
+        }
+        .card-block span.number {
+            font-size: 2.5em;
+        }
+        #counter {
+            font-size: 1.5em;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Zombicide Game Helper</h1>
-    
-    <div>
-        <button onclick="setLevel('blue')">Azul</button>
-        <button onclick="setLevel('yellow')">Amarelo</button>
-        <button onclick="setLevel('orange')">Laranja</button>
-        <button onclick="setLevel('red')">Vermelho</button>
-    </div>
-    
+    <h1>Zombicide Game Helper - By Duque</h1>
+
     <div>
         <button onclick="drawZombieCard()">Draw Zombie Card</button>
         <div id="zombie-card" class="card"></div>
     </div>
-
-    <div>
-        <button onclick="searchWeapon()">Search Weapon</button>
-        <div id="weapons-list"></div>
-    </div>
+    <div id="counter">Cards left: 0</div>
 
     <script src="app.js"></script>
 </body>
